@@ -1,5 +1,5 @@
 # Pharo-Regex-Tools
-Simple tool to verify regular expressions in Pharo
+Simple tool to verify matches while developing with regular expressions in Pharo
 
 ![](images/Tool.png)
 

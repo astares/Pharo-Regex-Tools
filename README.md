@@ -9,7 +9,7 @@ You can load the tool using the following load expression:
 
 	Metacello new
 	  baseline: 'RegexTools';
-	  repository: 'github://astares/Pharo-Regex-Tools';
+	  repository: 'github://astares/Pharo-Regex-Tools/repository';
 	  load.
 
 ## Short guide

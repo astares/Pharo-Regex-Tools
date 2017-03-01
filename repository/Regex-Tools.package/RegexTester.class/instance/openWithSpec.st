@@ -1,4 +1,4 @@
-private - updating
+actions
 openWithSpec
 	super openWithSpec.
 	self updateMatches 

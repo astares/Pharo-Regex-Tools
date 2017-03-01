@@ -8,6 +8,6 @@ processMatchItemSelectionChanged: item
 			rx := regexpression text asRegex.
 			rx matches: selection.
 			matches := OrderedCollection new.
-			1 to: rx subexpressionCount do: [:idx | matches add: (rx subexpression: idx) ].
+			1 to: rx subexpressionCount do: [:idx | matches add: (self viewStringFor: (rx subexpressions: idx) atIndex: idx) ].
 			resultList items: matches.
 	] 

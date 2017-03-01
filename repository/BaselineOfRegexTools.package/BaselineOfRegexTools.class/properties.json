@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "TorstenBergmann 3/1/2017 20:59",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfRegexTools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfRegexTools",
+	"type" : "normal"
+}

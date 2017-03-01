@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "TorstenBergmann 3/1/2017 09:11",
+	"super" : "ComposableModel",
+	"category" : "Regex-Tools-View",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"regexpression",
+		"matchList",
+		"resultList"
+	],
+	"name" : "RegexTester",
+	"type" : "normal"
+}

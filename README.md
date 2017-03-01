@@ -3,7 +3,12 @@ Simple tool to verify regular expressions in Pharo
 
 ## Installation
 
+You can load the tool using the following load expression:
 
+	Metacello new
+	  baseline: 'RegexTools';
+	  repository: 'github://astares/Pharo-Regex-Tools';
+	  load.
 
 ## Short guide
 

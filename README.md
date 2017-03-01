@@ -14,7 +14,11 @@ You can load the tool using the following load expression:
 
 ## Short guide
 
-Open the **Regulare Expression Tester** from the Pharo **Tools** menu. 
+Open the **Regulare Expression Tester** from the Pharo **Tools** menu after you loaded the tool into your Pharo image. Alternatively you can evaluate
+
+	RegexTester open 
+	
+to open the window.	
 
 Click in the middle pane with the samples and add a new test sample. 
 
@@ -80,7 +84,7 @@ You can use the regular expression now in a Pharo method:
 >Side note: Now our regular expression fits the purpose of the demonstration of the tool. If you like you can extend the expression even more. 
 
 	
-## Extended usage
+## Extended usage with subexpressions
 
 Sometimes you are not only interested if a given string can be matched - but you would also be interested in the subparts that matched.
 
@@ -108,5 +112,19 @@ If you would run
 
 	MailChecker domainPartFromEmail: 'abc@def.com'
 	
-afterwards it would correctly return "def.com" as result.	
+afterwards it would correctly return "def.com" as result.
 
+If you like you can further subdivide your regular expression, for instance like this:
+
+	([\w]+)@(([\w]+)\.([\w]+))
+
+to separate the **domain name** from the **domain extension** in the **domain part**
+	
+## Scripting
+
+If you would like to script the tool you can easily do:
+
+
+	| tool |	tool := RegexTester new.	tool expression: '([\w]+)@(([\w]+)\.([\w]+))'.	tool matches: #('abc@def.org' 'pharo@pharo.org' 'foo@def.com' 'user@domain.org').	tool openWithSpec
+
+This is especially useful if you would later reopen the tool on the samples you used. 

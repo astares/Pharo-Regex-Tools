@@ -1,6 +1,8 @@
 # Pharo-Regex-Tools
 Simple tool to verify regular expressions in Pharo
 
+![](images/Tool.png)
+
 ## Installation
 
 You can load the tool using the following load expression:

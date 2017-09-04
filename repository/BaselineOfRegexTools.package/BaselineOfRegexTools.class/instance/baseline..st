@@ -8,9 +8,9 @@ baseline: spec
       spec
         package: 'Regex-Tools'.
       spec
-        group: 'default'
+        group: 'all'
         with: #('Regex-Tools').
 		spec
-			group: 'development'
-			with: #('default').
+			group: 'default'
+			with: #('all').
    ]

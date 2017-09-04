@@ -4,6 +4,7 @@ baseline: spec
   spec
     for: #(common)
     do: [ 
+		spec blessing: #baseline.
       spec
         package: 'Regex-Tools'.
       spec

@@ -7,16 +7,20 @@ Simple tool to verify matches while developing with regular expressions in Pharo
 
 You can load the tool using the following load expression:
 
-	Metacello new
-	  baseline: 'RegexTools';
-	  repository: 'github://astares/Pharo-Regex-Tools/repository';
-	  load.
+```Smalltalk
+Metacello new
+  baseline: 'RegexTools';
+  repository: 'github://astares/Pharo-Regex-Tools/repository';
+  load.
+```
 
 ## Short guide
 
 Open the **Regulare Expression Tester** from the Pharo **Tools** menu after you loaded the tool into your Pharo image. Alternatively you can evaluate
 
-	RegexTester open 
+```Smalltalk
+RegexTester open 
+```
 	
 to open the window.	
 
@@ -74,12 +78,14 @@ Now all the samples from this little tutorial are accepted.
 
 You can use the regular expression now in a Pharo method:
 
+```Smalltalk
 	isValidEmail: aString
 		"Returns true if the given String represents a valid email"
 		
 		|rx|
 		rx := '[\w]+@[\w]+\.[\w]+' asRegex.
 		^rx matches: aString
+```
 
 >Side note: Now our regular expression fits the purpose of the demonstration of the tool. If you like you can extend the expression even more. 
 
@@ -106,11 +112,24 @@ At the first index 1 we find the full match. At the second index 2 we find the u
 
 With this knowledge we can easily write a method on our MailChecker utility class that returns the domain part of an email address by letting the regular expression to the work for us:
 
-     domainPartFromEmail: aString		"Returns the domain part of an email"				|rx|		rx := '([\w]+)@([\w]+\.[\w]+)' asRegex.				(rx matches: aString)			ifFalse: [ self error: 'not a valid email given' ].				^rx subexpression: 3
+```Smalltalk
+domainPartFromEmail: aString
+	"Returns the domain part of an email"
+
+	|rx|
+	rx := '([\w]+)@([\w]+\.[\w]+)' asRegex.
+
+	(rx matches: aString)
+		ifFalse: [ self error: 'not a valid email given' ].
+
+	^rx subexpression: 3
+```
 
 If you would run
 
+```Smalltalk
 	MailChecker domainPartFromEmail: 'abc@def.com'
+```
 	
 afterwards it would correctly return "def.com" as result.
 
@@ -124,7 +143,12 @@ to separate the **domain name** from the **domain extension** in the **domain pa
 
 If you would like to script the tool you can easily do:
 
-
-	| tool |	tool := RegexTester new.	tool expression: '([\w]+)@(([\w]+)\.([\w]+))'.	tool matches: #('abc@def.org' 'pharo@pharo.org' 'foo@def.com' 'user@domain.org').	tool openWithSpec
+```Smalltalk
+| tool |
+tool := RegexTester new.
+tool expression: '([\w]+)@(([\w]+)\.([\w]+))'.
+tool matches: #('abc@def.org' 'pharo@pharo.org' 'foo@def.com' 'user@domain.org').
+tool openWithSpec
+``` 
 
 This is especially useful if you would later reopen the tool on the samples you used. 

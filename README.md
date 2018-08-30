@@ -79,12 +79,12 @@ Now all the samples from this little tutorial are accepted.
 You can use the regular expression now in a Pharo method:
 
 ```Smalltalk
-	isValidEmail: aString
-		"Returns true if the given String represents a valid email"
-		
-		|rx|
-		rx := '[\w]+@[\w]+\.[\w]+' asRegex.
-		^rx matches: aString
+isValidEmail: aString
+	"Returns true if the given String represents a valid email"
+
+	|rx|
+	rx := '[\w]+@[\w]+\.[\w]+' asRegex.
+	^rx matches: aString
 ```
 
 >Side note: Now our regular expression fits the purpose of the demonstration of the tool. If you like you can extend the expression even more. 
@@ -128,7 +128,7 @@ domainPartFromEmail: aString
 If you would run
 
 ```Smalltalk
-	MailChecker domainPartFromEmail: 'abc@def.com'
+MailChecker domainPartFromEmail: 'abc@def.com'
 ```
 	
 afterwards it would correctly return "def.com" as result.

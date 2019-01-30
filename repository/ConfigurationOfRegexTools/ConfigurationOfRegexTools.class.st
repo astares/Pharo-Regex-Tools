@@ -170,6 +170,19 @@ ConfigurationOfRegexTools >> development: spec [
 
 ]
 
+{ #category : #versions }
+ConfigurationOfRegexTools >> pharo7: spec [
+	<version: '7.0'>
+
+	spec for: #'common' do: [ 
+		spec blessing: #'stable'.
+		spec
+			baseline: 'RegexTools' with: [ 
+				spec 
+					className: 'BaselineOfRegexTools';
+					repository: 'github://astares/Pharo-Regex-Tools:pharo7/repository' ]]
+]
+
 { #category : #accessing }
 ConfigurationOfRegexTools >> project [
     ^ project
@@ -186,9 +199,9 @@ ConfigurationOfRegexTools >> project [
 ConfigurationOfRegexTools >> stable: spec [
 	<symbolicVersion: #'stable'>
 
-	spec for: #'common' version: '0.0.1'.
 	spec for: #'pharo5.x' version: '0.0.2'.
 	spec for: #'pharo6.x' version: '0.0.2'.	
+	spec for: #'common' version: '7.0'.	
 ]
 
 { #category : #versions }
